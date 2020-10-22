@@ -2,7 +2,8 @@ package sncf.oui.io.fizzbuzz;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 /**
  * FizzBuzz = (Int) -> String
@@ -25,21 +26,17 @@ class FizzBuzzTest {
         this.fizzBuzz = new FizzBuzz();
     }
 
-    @Test
-    void should_get_a_value_1_given_1() {
-        final var value = 1;
+    @ParameterizedTest
+    @CsvSource({
+            "1,1",
+            "2,2",
+            "4,4",
+            "7,7"
+    })
+    void should_map_value_to_string(final int value, final String expectedResponse) {
 
         final var response = fizzBuzz.valueOf(value);
 
-        Assertions.assertThat(response).isEqualTo("1");
-    }
-
-    @Test
-    void should_get_a_value_2_given_2() {
-        final var value = 2;
-
-        final var response = fizzBuzz.valueOf(value);
-
-        Assertions.assertThat(response).isEqualTo("2");
+        Assertions.assertThat(response).isEqualTo(expectedResponse);
     }
 }
