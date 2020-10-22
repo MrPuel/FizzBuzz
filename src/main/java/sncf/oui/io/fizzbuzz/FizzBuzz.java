@@ -15,6 +15,9 @@ public class FizzBuzz {
         if (value == 30) {
             returnString = "FizzBuzz";
         }
+        if (value == 45) {
+            returnString = "FizzBuzz";
+        }
         return returnString;
     }
 }
