@@ -68,7 +68,8 @@ class FizzBuzzTest {
 
     @ParameterizedTest
     @CsvSource({
-            "15,FizzBuzz"
+            "15,FizzBuzz",
+            "30,FizzBuzz"
     })
     void should_map_value_to_fizzbuzz(final int value, final String expectedResponse) {
 
