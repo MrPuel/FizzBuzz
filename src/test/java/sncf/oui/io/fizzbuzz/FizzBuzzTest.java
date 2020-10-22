@@ -1,7 +1,6 @@
 package sncf.oui.io.fizzbuzz;
 
 import org.assertj.core.api.Assertions;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -30,8 +29,17 @@ class FizzBuzzTest {
     void should_get_a_value_1_given_1() {
         final var value = 1;
 
-        final var response  = fizzBuzz.valueOf(value);
+        final var response = fizzBuzz.valueOf(value);
 
         Assertions.assertThat(response).isEqualTo("1");
+    }
+
+    @Test
+    void should_get_a_value_2_given_2() {
+        final var value = 2;
+
+        final var response = fizzBuzz.valueOf(value);
+
+        Assertions.assertThat(response).isEqualTo("2");
     }
 }
