@@ -30,6 +30,7 @@ class FizzBuzzTest {
     @CsvSource({
             "1,1",
             "2,2",
+            "3,Fizz",
             "4,4",
             "7,7"
     })
