@@ -6,6 +6,8 @@ public class FizzBuzz {
             return "Fizz";
         if (value == 6)
             return "Fizz";
+        if (value == 9)
+            return "Fizz";
         if (value == 5)
             return "Buzz";
         return Integer.toString(value);

@@ -34,7 +34,8 @@ class FizzBuzzTest {
             "4,4",
             "5,Buzz",
             "6,Fizz",
-            "7,7"
+            "7,7",
+            "9,Fizz"
     })
     void should_map_value_to_string(final int value, final String expectedResponse) {
 
