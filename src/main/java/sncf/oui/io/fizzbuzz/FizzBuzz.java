@@ -7,16 +7,11 @@ public class FizzBuzz {
             returnString = "Fizz";
         }
         if (value % 5 == 0) {
-            returnString = "Buzz";
-        }
-        if (value == 15) {
-            returnString = "FizzBuzz";
-        }
-        if (value == 30) {
-            returnString = "FizzBuzz";
-        }
-        if (value == 45) {
-            returnString = "FizzBuzz";
+            if (returnString.equals(Integer.toString(value))) {
+                returnString = "Buzz";
+            } else {
+                returnString += "Buzz";
+            }
         }
         return returnString;
     }
