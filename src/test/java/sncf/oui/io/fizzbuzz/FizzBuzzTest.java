@@ -30,14 +30,35 @@ class FizzBuzzTest {
     @CsvSource({
             "1,1",
             "2,2",
-            "3,Fizz",
             "4,4",
-            "5,Buzz",
-            "6,Fizz",
-            "7,7",
-            "9,Fizz"
+            "7,7"
     })
     void should_map_value_to_string(final int value, final String expectedResponse) {
+
+        final var response = fizzBuzz.valueOf(value);
+
+        Assertions.assertThat(response).isEqualTo(expectedResponse);
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "3,Fizz",
+            "6,Fizz",
+            "9,Fizz"
+    })
+    void should_map_value_to_fizz(final int value, final String expectedResponse) {
+
+        final var response = fizzBuzz.valueOf(value);
+
+        Assertions.assertThat(response).isEqualTo(expectedResponse);
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "5,Buzz",
+            "10,Buzz"
+    })
+    void should_map_value_to_buzz(final int value, final String expectedResponse) {
 
         final var response = fizzBuzz.valueOf(value);
 
