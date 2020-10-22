@@ -2,14 +2,12 @@ package sncf.oui.io.fizzbuzz;
 
 public class FizzBuzz {
     public String valueOf(final int value) {
-        if (value == 3)
-            return "Fizz";
-        if (value == 6)
-            return "Fizz";
-        if (value == 9)
-            return "Fizz";
+        String returnString = Integer.toString(value);
+        if (value % 3 == 0) {
+            returnString = "Fizz";
+        }
         if (value == 5)
             return "Buzz";
-        return Integer.toString(value);
+        return returnString;
     }
 }
