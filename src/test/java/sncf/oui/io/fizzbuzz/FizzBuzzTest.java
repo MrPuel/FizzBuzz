@@ -65,4 +65,15 @@ class FizzBuzzTest {
 
         Assertions.assertThat(response).isEqualTo(expectedResponse);
     }
+
+    @ParameterizedTest
+    @CsvSource({
+            "15,FizzBuzz"
+    })
+    void should_map_value_to_fizzbuzz(final int value, final String expectedResponse) {
+
+        final var response = fizzBuzz.valueOf(value);
+
+        Assertions.assertThat(response).isEqualTo(expectedResponse);
+    }
 }

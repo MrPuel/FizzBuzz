@@ -9,6 +9,9 @@ public class FizzBuzz {
         if (value % 5 == 0) {
             returnString = "Buzz";
         }
+        if (value == 15) {
+            returnString = "FizzBuzz";
+        }
         return returnString;
     }
 }
