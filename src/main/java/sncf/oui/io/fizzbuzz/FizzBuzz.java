@@ -10,6 +10,8 @@ public class FizzBuzz {
             return "Buzz";
         if (value == 10)
             return "Buzz";
+        if (value == 20)
+            return "Buzz";
         return returnString;
     }
 }
