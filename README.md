@@ -1,2 +1,2 @@
-# FizzBuzz_with_TDD
+# FizzBuzz
 FizzBuzz with TDD
