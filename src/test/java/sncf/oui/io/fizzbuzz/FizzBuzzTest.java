@@ -1,9 +1,12 @@
 package sncf.oui.io.fizzbuzz;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 /**
  * FizzBuzz = (Int) -> String
@@ -37,7 +40,7 @@ class FizzBuzzTest {
 
         final var response = fizzBuzz.valueOf(value);
 
-        Assertions.assertThat(response).isEqualTo(expectedResponse);
+        assertThat(response).isEqualTo(expectedResponse);
     }
 
     @ParameterizedTest
@@ -50,7 +53,7 @@ class FizzBuzzTest {
 
         final var response = fizzBuzz.valueOf(value);
 
-        Assertions.assertThat(response).isEqualTo(expectedResponse);
+        assertThat(response).isEqualTo(expectedResponse);
     }
 
     @ParameterizedTest
@@ -63,7 +66,7 @@ class FizzBuzzTest {
 
         final var response = fizzBuzz.valueOf(value);
 
-        Assertions.assertThat(response).isEqualTo(expectedResponse);
+        assertThat(response).isEqualTo(expectedResponse);
     }
 
     @ParameterizedTest
@@ -76,6 +79,14 @@ class FizzBuzzTest {
 
         final var response = fizzBuzz.valueOf(value);
 
-        Assertions.assertThat(response).isEqualTo(expectedResponse);
+        assertThat(response).isEqualTo(expectedResponse);
+    }
+
+    @Test
+    void should_throw_given_value_of_minus1() {
+
+        assertThatExceptionOfType(IllegalArgumentException.class)
+                .isThrownBy(() -> fizzBuzz.valueOf(-1))
+                .withMessage("Negative value are not supported");
     }
 }
