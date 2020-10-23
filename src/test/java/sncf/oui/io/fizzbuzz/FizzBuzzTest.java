@@ -77,5 +77,6 @@ class FizzBuzzTest {
         final var response = fizzBuzz.valueOf(value);
 
         Assertions.assertThat(response).isEqualTo(expectedResponse);
+
     }
 }
