@@ -33,7 +33,7 @@ class FizzBuzzTest {
             "4,4",
             "7,7"
     })
-    void should_map_value_to_string(final int value, final String expectedResponse) {
+    void should_map_value_to_string_given_a_value_not_divisible_by_3_or_5(final int value, final String expectedResponse) {
 
         final var response = fizzBuzz.valueOf(value);
 
@@ -46,7 +46,7 @@ class FizzBuzzTest {
             "6,Fizz",
             "9,Fizz"
     })
-    void should_map_value_to_fizz(final int value, final String expectedResponse) {
+    void should_map_value_to_fizz_given_a_value_divisible_by_3(final int value, final String expectedResponse) {
 
         final var response = fizzBuzz.valueOf(value);
 
@@ -59,7 +59,7 @@ class FizzBuzzTest {
             "10,Buzz",
             "20,Buzz"
     })
-    void should_map_value_to_buzz(final int value, final String expectedResponse) {
+    void should_map_value_to_buzz_given_a_value_divisible_by_5(final int value, final String expectedResponse) {
 
         final var response = fizzBuzz.valueOf(value);
 
@@ -72,7 +72,7 @@ class FizzBuzzTest {
             "30,FizzBuzz",
             "45,FizzBuzz"
     })
-    void should_map_value_to_fizzbuzz(final int value, final String expectedResponse) {
+    void should_map_value_to_fizzbuzz_given_a_value_divisible_by_15(final int value, final String expectedResponse) {
 
         final var response = fizzBuzz.valueOf(value);
 
