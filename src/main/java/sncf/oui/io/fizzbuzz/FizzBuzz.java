@@ -2,17 +2,13 @@ package sncf.oui.io.fizzbuzz;
 
 public class FizzBuzz {
     public String valueOf(final int value) {
-        String returnString = Integer.toString(value);
+        String returnString = "";
         if (value % 3 == 0) {
             returnString = "Fizz";
         }
         if (value % 5 == 0) {
-            if (returnString.equals(Integer.toString(value))) {
-                returnString = "Buzz";
-            } else {
-                returnString += "Buzz";
-            }
+            returnString += "Buzz";
         }
-        return returnString;
+        return returnString.isEmpty() ? Integer.toString(value) : returnString;
     }
 }
