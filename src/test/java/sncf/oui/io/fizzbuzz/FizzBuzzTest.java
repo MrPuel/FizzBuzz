@@ -8,18 +8,6 @@ import org.junit.jupiter.params.provider.CsvSource;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
-/**
- * FizzBuzz = (Int) -> String
- * Int divisible par 3 = Fizz
- * Int divisible par 5 = Buzz
- * Int divisible apr 3 et 5 = FizzBuzz
- * Sinon Int renvoie sa valeur en string
- *
- * Norme de nomage : "should_..._given_..."
- * Structuure d'un test : Given, That, Then
- * SUT : System Under Test = le comportement / la classe qu'on est en train de tester
- */
-
 class FizzBuzzTest {
 
     private FizzBuzz fizzBuzz;
@@ -33,8 +21,7 @@ class FizzBuzzTest {
     @CsvSource({
             "1,1",
             "2,2",
-            "4,4",
-            "7,7"
+            "4,4"
     })
     void should_map_value_to_string_given_a_value_not_divisible_by_3_or_5(final int value, final String expectedResponse) {
 
@@ -76,6 +63,32 @@ class FizzBuzzTest {
             "45,FizzBuzz"
     })
     void should_map_value_to_fizzbuzz_given_a_value_divisible_by_15(final int value, final String expectedResponse) {
+
+        final var response = fizzBuzz.valueOf(value);
+
+        assertThat(response).isEqualTo(expectedResponse);
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "7,Bazz",
+            "14,Bazz",
+            "49,Bazz"
+    })
+    void should_map_value_to_bazz_given_a_value_divisible_by_7(final int value, final String expectedResponse) {
+
+        final var response = fizzBuzz.valueOf(value);
+
+        assertThat(response).isEqualTo(expectedResponse);
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "105,FizzBuzzBazz",
+            "210,FizzBuzzBazz",
+            "315,FizzBuzzBazz"
+    })
+    void should_map_value_to_bazz_given_a_value_divisible_by_105(final int value, final String expectedResponse) {
 
         final var response = fizzBuzz.valueOf(value);
 
