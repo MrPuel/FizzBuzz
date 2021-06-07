@@ -4,13 +4,10 @@ import java.util.*;
 
 public class FizzBuzz {
 
-    HashMap<Integer,String> map;
+    Map<Integer,String> map;
 
-    public FizzBuzz(){
-        map = new HashMap<>();
-        map.put(3,"Fizz");
-        map.put(5,"Buzz");
-        map.put(7,"Bazz");
+    public FizzBuzz(Map<Integer,String> map){
+        this.map = map;
     }
 
     public String valueOf(final int value) {

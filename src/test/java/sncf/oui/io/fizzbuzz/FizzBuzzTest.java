@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import java.util.HashMap;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
@@ -14,7 +16,11 @@ class FizzBuzzTest {
 
     @BeforeEach
     void setup() {
-        this.fizzBuzz = new FizzBuzz();
+        HashMap<Integer,String> map = new HashMap<>();
+        map.put(3,"Fizz");
+        map.put(5,"Buzz");
+        map.put(7,"Bazz");
+        this.fizzBuzz = new FizzBuzz(map);
     }
 
     @ParameterizedTest
