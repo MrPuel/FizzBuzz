@@ -6,6 +6,6 @@ public class main {
     public static void main(String[] args) {
         FizzBuzz fizzBuzz = new FizzBuzz();
 
-        fizzBuzz.printToOneThousand();
+        fizzBuzz.printTo(1000);
     }
 }

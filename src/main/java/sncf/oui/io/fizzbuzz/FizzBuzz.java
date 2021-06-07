@@ -16,29 +16,23 @@ public class FizzBuzz {
     public String valueOf(final int value) {
         Iterator<Map.Entry<Integer,String>> it = map.entrySet().iterator();
         boolean f = false;
-        String result = "";
+        StringBuilder result = new StringBuilder();
         if (value < 0)
             throw new IllegalArgumentException("Negative value are not supported");
         while(it.hasNext()) {
             Map.Entry<Integer,String> pair = it.next();
             if ((value % pair.getKey()) == 0) {
-                result += pair.getValue();
+                result.append(pair.getValue());
                 f = true;
             }
         }
         if(f)
-            return result;
+            return result.toString();
         return Integer.toString(value);
     }
 
-    public void printToOneHundred(){
-        for(int i = 1 ; i <= 100 ; i++){
-            System.out.println(valueOf(i));
-        }
-    }
-
-    public void printToOneThousand(){
-        for(int i = 1 ; i <= 1000 ; i++){
+    public void printTo(int value){
+        for(int i = 1 ; i <= value ; i++){
             System.out.println(valueOf(i));
         }
     }
