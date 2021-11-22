@@ -1,35 +1,25 @@
-pipeline { 
-    agent any  
-    tools
-   {
-    maven 'maven'
-   }
-    stages { 
-        stage ('UnitTests') {
+pipeline {
+    agent any
+
+    tools {
+        maven 'Maven'
+    }
+
+    stages {
+        stage('Build') {
             steps {
-                sh 'mvn test' 
+                sh 'java --version'
             }
-            post {
-                success {
-                    echo 'ca marche bg' 
-                }
+        }
+        stage('Test') {
+            steps {
+                sh 'mvn test'
             }
-            /*steps
-               {
-                script
-                 {
-                  if (isUnix()) 
-                   {
-                    sh 'mvn --batch-mode resources:testResources compiler:testCompile surefire:test'
-                   }
-                  else
-                   {
-                    bat 'mvn --batch-mode resources:testResources compiler:testCompile surefire:test'
-                   }
-                 }
-               }*/
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
         }
     }
-    
-
 }
