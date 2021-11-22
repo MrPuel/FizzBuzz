@@ -6,15 +6,15 @@ pipeline {
    }
     stages { 
         stage ('UnitTests') {
-            /*steps {
+            steps {
                 sh 'mvn test' 
             }
             post {
                 success {
                     echo 'ca marche bg' 
                 }
-            }*/
-            steps
+            }
+            /*steps
                {
                 script
                  {
@@ -27,7 +27,7 @@ pipeline {
                     bat 'mvn --batch-mode resources:testResources compiler:testCompile surefire:test'
                    }
                  }
-               }
+               }*/
         }
     }
     
