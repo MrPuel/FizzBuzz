@@ -1,10 +1,17 @@
 pipeline { 
     agent any  
     stages { 
-        stage('Build') { 
-            steps { 
-               echo 'This is a minimal pipeline.' 
+        stage ('Build') {
+            steps {
+                sh 'mvn test' 
+            }
+            post {
+                success {
+                    echo 'ca marche bg' 
+                }
             }
         }
     }
+    
+
 }
