@@ -38,7 +38,7 @@ class FizzBuzzTest {
 
     @ParameterizedTest
     @CsvSource({
-            "4,Fizz",
+            "3,Fizz",
             "6,Fizz",
             "9,Fizz"
     })
