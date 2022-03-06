@@ -41,3 +41,17 @@ jobs:
           severity: info
           details: Test Succeeded!
           webhookUrl: https://discord.com/api/webhooks/902202707111202816/kX4y4jqmq-gwmeKKsR62LcvlQjFpUNNGrjsOaDODvGKUJD2ure7YVrUo2jvmUpqKlxrF
+      - name: Test Failure
+        uses: rjstone/discord-webhook-notify@v1
+        if: failure()
+        with:
+            severity: error
+            details: Test Failed!
+            webhookUrl: https://discord.com/api/webhooks/902202707111202816/kX4y4jqmq-gwmeKKsR62LcvlQjFpUNNGrjsOaDODvGKUJD2ure7YVrUo2jvmUpqKlxrF
+      - name: Test Cancelled
+        uses: rjstone/discord-webhook-notify@v1
+        if: cancelled()
+        with:
+            severity: warn
+            details: Test Cancelled!
+            webhookUrl: https://discord.com/api/webhooks/902202707111202816/kX4y4jqmq-gwmeKKsR62LcvlQjFpUNNGrjsOaDODvGKUJD2ure7YVrUo2jvmUpqKlxrF
