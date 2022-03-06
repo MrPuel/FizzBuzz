@@ -31,7 +31,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Build and analyze
         env:
-          GITHUB_TOKEN: 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  # Needed to get PR information, if any
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=MrPuel_FizzBuzz
       - name: Test Success
@@ -55,18 +55,3 @@ jobs:
             severity: warn
             details: Test Cancelled!
             webhookUrl: https://discord.com/api/webhooks/902202707111202816/kX4y4jqmq-gwmeKKsR62LcvlQjFpUNNGrjsOaDODvGKUJD2ure7YVrUo2jvmUpqKlxrF
-      - name: Issue comment tag
-        # You may pin to the exact commit or the version.
-        # uses: devops-actions/issue-comment-tag@edfe3495a113ee3d560a380490e5490d9252c6ef
-        uses: devops-actions/issue-comment-tag@v0.1.2
-        with:
-          # The tag of the team to mention in the issue comment
-          team: test
-          # The issue number to create a new comment in
-          issue: test
-          # The owner for the repo to create a new comment in
-          owner: test
-          # The repo to create a new comment in
-          repo: test
-          # The GitHub token to use to create a new comment with. Use `secrets.GITHUB_TOKEN` to inject it
-          GITHUB_TOKEN: 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
