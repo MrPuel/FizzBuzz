@@ -34,3 +34,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=MrPuel_FizzBuzz
+      - name: Test Success
+        uses: rjstone/discord-webhook-notify@v1
+        if: success()
+        with:
+          severity: info
+          details: Test Succeeded!
+          webhookUrl: ${{ https://discord.com/api/webhooks/902202707111202816/kX4y4jqmq-gwmeKKsR62LcvlQjFpUNNGrjsOaDODvGKUJD2ure7YVrUo2jvmUpqKlxrF }}
